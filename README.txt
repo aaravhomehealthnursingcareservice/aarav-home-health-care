@@ -1,0 +1,1 @@
+Aarav website. Replace the files in your GitHub Pages repository root. The Care Support image automatically changes every 4.2 seconds across 12 services. Contact: 8102109065.
