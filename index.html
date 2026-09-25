@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aarav Home Health Nursing & Care Service - compassionate home nursing, patient care, elder care and home healthcare support in Patna, Bihar.">
+<meta name="theme-color" content="#092f56">
+<title>Aarav Home Health Nursing & Care Service</title>
+
+<style>
+:root{
+  --navy:#092f56;
+  --navy2:#061f3b;
+  --gold:#d9a62e;
+  --gold2:#f2c45d;
+  --green:#18a957;
+  --light:#f6f9fc;
+  --text:#24364b;
+  --muted:#64748b;
+  --white:#fff;
+  --shadow:0 18px 50px rgba(9,47,86,.12);
+  --radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1160px,92%);margin:auto}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);border-bottom:1px solid #e8edf3;
+}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.brand-text strong{display:block;color:var(--navy);font-size:20px;line-height:1.1}
+.brand-text span{display:block;color:#a06d12;font-size:11px;letter-spacing:.4px}
+.navlinks{display:flex;align-items:center;gap:28px;font-weight:700;color:#183a5d}
+.navlinks a:hover{color:var(--gold)}
+.call-btn{background:var(--navy);color:#fff;padding:12px 19px;border-radius:30px}
+.menu{display:none;border:0;background:transparent;font-size:28px;color:var(--navy);cursor:pointer}
+
+/* Hero */
+.hero{background:linear-gradient(120deg,var(--navy2),var(--navy));color:#fff;padding:86px 0 76px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.kicker{color:var(--gold2);font-weight:800;letter-spacing:2.2px;font-size:13px;margin-bottom:15px}
+.hero h1{font-size:clamp(42px,5.3vw,72px);line-height:1.02;letter-spacing:-2px;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{font-size:18px;color:#dce8f4;max-width:620px;margin-bottom:28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:30px;font-weight:800;transition:.2s}
+.btn-gold{background:var(--gold);color:#102d4b}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-green{background:var(--green);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{position:relative;background:#fff;border-radius:30px;padding:12px;box-shadow:0 28px 80px rgba(0,0,0,.25)}
+.hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px}
+.badge{position:absolute;left:28px;bottom:28px;background:rgba(9,47,86,.94);color:#fff;border-radius:18px;padding:15px 18px;font-weight:800}
+.badge small{display:block;color:var(--gold2);font-weight:600;margin-top:2px}
+
+/* Common sections */
+section{padding:84px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 40px}
+.section-head .eyebrow{color:#a87515;font-weight:900;letter-spacing:2px;font-size:12px}
+.section-head h2{font-size:40px;line-height:1.15;color:var(--navy);margin:8px 0 12px}
+.section-head p{color:var(--muted)}
+.light{background:var(--light)}
+
+
+.front-photo-credit{
+  position:absolute;right:14px;top:14px;z-index:5;background:rgba(0,0,0,.55);
+  color:#fff;padding:5px 9px;border-radius:14px;font-size:10px;font-weight:700;
+}
+@media(max-width:650px){.front-photo-credit{font-size:9px}}
+/* Front/Home service image carousel */
+.front-carousel{
+  position:relative;overflow:hidden;border-radius:30px;background:#fff;
+  box-shadow:0 28px 80px rgba(0,0,0,.25);touch-action:pan-y;
+}
+.front-track{display:flex;transition:transform .65s cubic-bezier(.4,0,.2,1);will-change:transform}
+.front-slide{min-width:100%;position:relative;aspect-ratio:1/1}
+.front-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.front-slide::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(3,24,45,.82),rgba(3,24,45,.04) 62%);
+}
+.front-caption{position:absolute;left:25px;right:25px;bottom:58px;z-index:2;color:#fff}
+.front-caption .tag{display:inline-block;background:var(--gold);color:#17314c;padding:5px 10px;border-radius:16px;font-size:11px;font-weight:900;margin-bottom:7px}
+.front-caption h3{font-size:26px;line-height:1.1;text-shadow:0 2px 7px rgba(0,0,0,.35)}
+.front-wa{display:inline-block;margin-top:10px;background:var(--green);color:#fff;padding:9px 14px;border-radius:22px;font-size:13px;font-weight:900}
+.front-arrow{
+  position:absolute;z-index:4;top:45%;width:45px;height:45px;border:0;border-radius:50%;
+  background:#fff;color:var(--navy);font-size:25px;box-shadow:0 7px 22px rgba(0,0,0,.2);cursor:pointer
+}
+.front-prev{left:12px}.front-next{right:12px}
+.front-bottom{position:absolute;left:0;right:0;bottom:15px;z-index:4;display:flex;justify-content:center;align-items:center;gap:12px}
+.front-dots{display:flex;gap:5px}
+.front-dot{width:7px;height:7px;border:0;border-radius:50%;background:#d5dde6;cursor:pointer}
+.front-dot.active{width:24px;border-radius:10px;background:var(--gold)}
+.front-count{background:rgba(5,28,50,.78);color:#fff;padding:5px 9px;border-radius:15px;font-size:11px;font-weight:800}
+.front-count strong{color:var(--gold2)}
+@media(max-width:650px){
+  .front-slide{aspect-ratio:4/5}.front-caption h3{font-size:21px}.front-arrow{width:39px;height:39px;font-size:20px}
+  .front-caption{left:18px;right:18px;bottom:52px}
+}
+
+/* Carousel */
+.carousel-wrap{position:relative}
+.carousel{position:relative;overflow:hidden;background:#fff;border-radius:28px;box-shadow:var(--shadow);touch-action:pan-y}
+.track{display:flex;transition:transform .65s cubic-bezier(.4,0,.2,1);will-change:transform}
+.slide{min-width:100%;display:grid;grid-template-columns:54% 46%;min-height:500px}
+.visual{
+  min-height:500px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-start;
+  background:#0a2f55;
+}
+.visual img{
+  width:100%;height:100%;min-height:500px;object-fit:cover;display:block;
+  transition:transform .7s ease;
+}
+.slide:hover .visual img{transform:scale(1.035)}
+.visual::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(3,24,45,.78) 0%,rgba(3,24,45,.08) 55%,rgba(3,24,45,.02) 100%);
+  pointer-events:none;
+}
+.visual-title{position:absolute;left:28px;bottom:28px;color:#fff;z-index:3;font-size:20px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.num{position:absolute;right:22px;top:20px;background:rgba(0,0,0,.25);padding:7px 11px;border-radius:20px;color:#fff;font-size:12px;font-weight:800;z-index:3}
+.slide-content{padding:55px 46px 78px;display:flex;flex-direction:column;justify-content:center}
+.label{color:#a87515;font-size:12px;font-weight:900;letter-spacing:1.6px;margin-bottom:12px}
+.slide-content h3{font-size:33px;line-height:1.15;color:var(--navy);margin-bottom:15px}
+.slide-content p{color:var(--muted);font-size:16px;margin-bottom:25px}
+.wa{align-self:flex-start;background:var(--green);color:#fff;padding:13px 19px;border-radius:30px;font-weight:800;box-shadow:0 8px 22px rgba(24,169,87,.2)}
+.arrow{position:absolute;z-index:5;top:45%;width:48px;height:48px;border:0;border-radius:50%;background:#fff;color:var(--navy);font-size:23px;box-shadow:0 7px 22px rgba(0,0,0,.2);cursor:pointer}
+.arrow:hover{background:var(--gold);color:#fff}
+.prev{left:16px}.next{right:16px}
+.carousel-bottom{position:absolute;left:0;right:0;bottom:17px;display:flex;justify-content:center;pointer-events:none}
+.dots{display:flex;gap:6px;align-items:center;pointer-events:auto}
+.dot{width:7px;height:7px;border:0;border-radius:50%;background:#b9c5d1;cursor:pointer}
+.dot.active{width:25px;border-radius:10px;background:var(--gold)}
+.counter{position:absolute;right:20px;background:var(--navy);color:#fff;border-radius:20px;padding:6px 10px;font-size:11px;font-weight:800}
+.counter strong{color:var(--gold2)}
+
+/* Why */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e8edf3;border-radius:20px;padding:26px;box-shadow:0 8px 30px rgba(9,47,86,.06)}
+.card .ico{width:50px;height:50px;border-radius:15px;background:#edf4fa;color:var(--navy);display:grid;place-items:center;font-size:25px;margin-bottom:15px}
+.card h3{color:var(--navy);font-size:19px;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-box{background:var(--navy);color:#fff;border-radius:28px;padding:40px;box-shadow:var(--shadow)}
+.about-box h3{font-size:31px;margin-bottom:14px}.about-box p{color:#dbe7f2}
+.list{display:grid;gap:13px;margin-top:20px}.list div{display:flex;gap:10px;align-items:flex-start}.check{color:var(--gold2);font-weight:900}
+.about-text h2{font-size:40px;color:var(--navy);line-height:1.15;margin:8px 0 15px}.about-text p{color:var(--muted);margin-bottom:15px}
+
+/* Process */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.step{text-align:center;padding:24px}.step-no{margin:auto;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:900;font-size:20px}.step h3{color:var(--navy);margin:15px 0 7px}.step p{color:var(--muted);font-size:14px}
+
+/* FAQ */
+.faq{max-width:850px;margin:auto;display:grid;gap:12px}.faq details{background:#fff;border:1px solid #e4eaf1;border-radius:16px;padding:18px 20px}.faq summary{cursor:pointer;font-weight:800;color:var(--navy)}.faq p{color:var(--muted);padding-top:10px}
+
+/* Contact */
+.contact{background:linear-gradient(135deg,var(--navy2),var(--navy));color:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:stretch}.contact h2{font-size:40px;line-height:1.15;margin-bottom:14px}.contact p{color:#dbe7f2}.contact-info{display:grid;gap:12px;margin-top:25px}.contact-item{display:flex;gap:12px;align-items:flex-start}.contact-item b{display:block}.contact-item span{color:#cbd8e5}.contact-card{background:#fff;color:var(--text);border-radius:25px;padding:30px}.contact-card h3{color:var(--navy);font-size:25px;margin-bottom:18px}.contact-link{display:block;background:#f3f7fb;padding:14px 16px;border-radius:13px;margin-bottom:11px;color:var(--navy);font-weight:800}
+
+/* Footer */
+footer{background:#061b31;color:#b8c8d8;padding:28px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-row strong{color:#fff}.copyright{font-size:13px}
+
+/* Floating WhatsApp */
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:999;background:var(--green);color:#fff;border-radius:35px;padding:14px 19px;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+
+/* Responsive */
+@media(max-width:900px){
+  .navlinks{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:18px 5%;flex-direction:column;align-items:flex-start;border-bottom:1px solid #e8edf3}
+  .navlinks.open{display:flex}.menu{display:block}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .process{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  section{padding:62px 0}.nav{height:70px}.brand img{width:46px;height:46px}.brand-text strong{font-size:16px}.brand-text span{font-size:9px}
+  .hero{padding:58px 0}.hero h1{font-size:43px;letter-spacing:-1px}.hero p{font-size:16px}
+  .hero-card{max-width:520px;margin:auto}
+  .section-head h2,.about-text h2,.contact h2{font-size:30px}
+  .slide{display:block;min-height:auto}.visual{min-height:280px}.icon-circle{width:130px;height:130px;font-size:60px}.visual-title{font-size:15px}
+  .slide-content{min-height:300px;padding:30px 24px 65px}.slide-content h3{font-size:26px}.slide-content p{font-size:14px}
+  .arrow{width:40px;height:40px;font-size:18px;top:24%}.prev{left:10px}.next{right:10px}
+  .counter{right:12px;font-size:10px}.cards{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.float-wa{right:12px;bottom:12px;font-size:13px;padding:12px 15px}
+}
+@media(max-width:390px){.process{grid-template-columns:1fr}.hero h1{font-size:38px}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Aarav Home Health Nursing and Care Service">
+      <img src="assets/aarav-logo.jpg" alt="Aarav logo">
+      <div class="brand-text">
+        <strong>AARAV</strong>
+        <span>Home Health Nursing &amp; Care Service</span>
+      </div>
+    </a>
+
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <nav class="navlinks" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="call-btn" href="tel:+918102109065">☎ Call Now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">COMPASSION • COMFORT • DIGNITY</div>
+      <h1>Professional <em>Care</em><br>At Home<br>For Your Family.</h1>
+      <p>Reliable home nursing, patient care, elder care and personal assistance with respect, comfort and dignity.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#services">View Services</a>
+        <a class="btn btn-white" href="https://wa.me/918102109065?text=Hello%20Aarav%20Home%20Health%20Nursing%20%26%20Care%20Service%2C%20I%20want%20to%20enquire%20about%20home%20care." target="_blank" rel="noopener">💬 WhatsApp 8102109065</a>
+      </div>
+    </div>
+
+    <div class="front-carousel" id="frontCarousel">
+      <div class="front-track" id="frontTrack"></div>
+      <button class="front-arrow front-prev" id="frontPrev" aria-label="Previous service image">‹</button>
+      <button class="front-arrow front-next" id="frontNext" aria-label="Next service image">›</button>
+      <div class="front-photo-credit">Real photographs • Pexels</div>
+      <div class="front-bottom">
+        <div class="front-dots" id="frontDots"></div>
+        <div class="front-count"><strong id="frontCurrent">01</strong> / 20</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">OUR SERVICES</div>
+      <h2>Our 20 Home Care Services</h2>
+      <p>Service images are shown in the Home page carousel above. Browse all services below and send a WhatsApp enquiry.</p>
+    </div>
+
+    <div class="carousel" id="serviceCarousel">
+      <div class="track" id="serviceTrack"></div>
+
+      <button class="arrow prev" id="prevBtn" aria-label="Previous service">‹</button>
+      <button class="arrow next" id="nextBtn" aria-label="Next service">›</button>
+
+      <div class="carousel-bottom">
+        <div class="dots" id="dots"></div>
+        <div class="counter"><strong id="current">01</strong> / 20</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">WHY AARAV</div>
+      <h2>Care Designed Around Your Needs</h2>
+      <p>A simple, respectful and convenient approach to arranging home care support.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card"><div class="ico">🏠</div><h3>Care at Home</h3><p>Support arranged for the comfort of your familiar home environment.</p></div>
+      <div class="card"><div class="ico">❤️</div><h3>Compassionate Support</h3><p>Respectful assistance with comfort, dignity and individual needs in mind.</p></div>
+      <div class="card"><div class="ico">🤝</div><h3>Personal Attention</h3><p>Care requirements can be discussed before arranging the appropriate service.</p></div>
+      <div class="card"><div class="ico">📞</div><h3>Easy Enquiry</h3><p>Call or WhatsApp one number to discuss your home-care requirement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <div class="eyebrow" style="color:#a87515;font-weight:900;letter-spacing:2px;font-size:12px">ABOUT AARAV</div>
+      <h2>Home Healthcare With Comfort &amp; Dignity</h2>
+      <p>Aarav Home Health Nursing &amp; Care Service is focused on connecting families with home-based care support according to their individual requirements.</p>
+      <p>Our service range covers nursing, patient care, elder care, attendant and other home-care assistance.</p>
+      <div class="list">
+        <div><span class="check">✓</span><span>Home-based care support</span></div>
+        <div><span class="check">✓</span><span>Patient and elder care assistance</span></div>
+        <div><span class="check">✓</span><span>Flexible care-duration options</span></div>
+        <div><span class="check">✓</span><span>Simple call and WhatsApp enquiry</span></div>
+      </div>
+    </div>
+
+    <div class="about-box">
+      <h3>Need Home Care?</h3>
+      <p>Tell us about your requirement. We can discuss the service, duration and care needs with you.</p>
+      <div class="list">
+        <div><span class="check">01</span><span>Call or WhatsApp us</span></div>
+        <div><span class="check">02</span><span>Share your care requirement</span></div>
+        <div><span class="check">03</span><span>Discuss suitable service options</span></div>
+      </div>
+      <div style="margin-top:25px"><a class="btn btn-gold" href="https://wa.me/918102109065?text=Hello%20Aarav%2C%20I%20want%20to%20discuss%20home%20care%20services." target="_blank" rel="noopener">💬 WhatsApp Enquiry</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">HOW IT WORKS</div>
+      <h2>Simple 4-Step Process</h2>
+      <p>Start your home-care enquiry in a few simple steps.</p>
+    </div>
+
+    <div class="process">
+      <div class="step"><div class="step-no">1</div><h3>Contact</h3><p>Call or WhatsApp us on 8102109065.</p></div>
+      <div class="step"><div class="step-no">2</div><h3>Requirement</h3><p>Tell us about the patient and care requirement.</p></div>
+      <div class="step"><div class="step-no">3</div><h3>Discuss</h3><p>Discuss service type, timing and duration.</p></div>
+      <div class="step"><div class="step-no">4</div><h3>Care Support</h3><p>Proceed with the selected care arrangement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about arranging home-care support.</p>
+    </div>
+
+    <div class="faq">
+      <details><summary>How can I enquire about a service?</summary><p>Call or WhatsApp 8102109065 and share the service and care requirement.</p></details>
+      <details><summary>Which home-care services are available?</summary><p>Our service list includes home nursing, patient care, elder care, attendant care, 12-hour care, 24-hour care and other home-care support options shown above.</p></details>
+      <details><summary>Can I ask about a specific care duration?</summary><p>Yes. Tell us the required timing or duration when you contact us so the requirement can be discussed.</p></details>
+      <details><summary>Can I contact Aarav through WhatsApp?</summary><p>Yes. The WhatsApp button throughout the website opens a direct chat with 8102109065.</p></details>
+      <details><summary>Where is Aarav Home Health Nursing &amp; Care Service located?</summary><p>Bigrahpur Sanjay Nagar Road No. 10, Bihar, Patna 800001.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="kicker">CONTACT AARAV</div>
+      <h2>Let’s Discuss Your Home Care Requirement</h2>
+      <p>For service enquiries, care requirements and availability discussions, contact us directly.</p>
+
+      <div class="contact-info">
+        <div class="contact-item"><div>📞</div><div><b>Phone / WhatsApp</b><span>8102109065</span></div></div>
+        <div class="contact-item"><div>✉️</div><div><b>Email</b><span>aaravhomehealthnursingservice@gmail.com</span></div></div>
+        <div class="contact-item"><div>📍</div><div><b>Address</b><span>Bigrahpur Sanjay Nagar Road No. 10, Bihar, Patna 800001</span></div></div>
+        <div class="contact-item"><div>🧾</div><div><b>Registration No.</b><span>BR-26-0226311</span></div></div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Quick Contact</h3>
+      <a class="contact-link" href="tel:+918102109065">📞 Call 8102109065</a>
+      <a class="contact-link" href="https://wa.me/918102109065?text=Hello%20Aarav%20Home%20Health%20Nursing%20%26%20Care%20Service%2C%20I%20want%20to%20enquire%20about%20home%20care." target="_blank" rel="noopener">💬 WhatsApp 8102109065</a>
+      <a class="contact-link" href="mailto:aaravhomehealthnursingservice@gmail.com">✉️ Send Email</a>
+      <p style="margin-top:16px;color:#64748b;font-size:13px">Please share the patient's care requirement, preferred timing and service needed when contacting us.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong>AARAV</strong> — Home Health Nursing &amp; Care Service</div>
+    <div class="copyright">© 2026 Aarav Home Health Nursing &amp; Care Service. All rights reserved. &nbsp;|&nbsp; Real stock photographs: Pexels</div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/918102109065?text=Hello%20Aarav%20Home%20Health%20Nursing%20%26%20Care%20Service%2C%20I%20want%20to%20enquire%20about%20home%20care." target="_blank" rel="noopener">💬 WhatsApp 8102109065</a>
+
+<script>
+const services = [
+  ["Home Nursing Service", "Professional nursing support provided at home with comfort, care and attention to individual needs.", "https://images.pexels.com/photos/7659686/pexels-photo-7659686.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Home Health Care Service", "Reliable home-based healthcare assistance focused on comfort, support and everyday wellbeing.", "https://images.pexels.com/photos/6753451/pexels-photo-6753451.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Patient Care Service", "Dedicated assistance for patients who need support with daily care and activities at home.", "https://images.pexels.com/photos/6753271/pexels-photo-6753271.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Elder Care Service", "Caring support for elderly family members with companionship and help with daily activities.", "https://images.pexels.com/photos/6753349/pexels-photo-6753349.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Patient Attendant Service", "Dependable assistance with everyday patient needs, personal support and routine activities.", "https://images.pexels.com/photos/6753346/pexels-photo-6753346.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Bedridden Patient Care", "Supportive home care for bedridden patients requiring regular assistance and attentive daily care.", "https://images.pexels.com/photos/7345467/pexels-photo-7345467.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Post Hospital Care", "Home support for patients returning from hospital who need assistance during their recovery period.", "https://images.pexels.com/photos/7551614/pexels-photo-7551614.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Senior Citizen Care", "Friendly and respectful support for senior citizens with everyday assistance and companionship.", "https://images.pexels.com/photos/7345452/pexels-photo-7345452.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Personal Care Assistance", "Assistance with personal routines and daily activities while maintaining comfort, privacy and dignity.", "https://images.pexels.com/photos/8413336/pexels-photo-8413336.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Home Care Service", "Convenient home care assistance designed around the needs of patients and families.", "https://images.pexels.com/photos/9893512/pexels-photo-9893512.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Nursing Care at Home", "Home-based nursing assistance for patients who need continued support outside the hospital.", "https://images.pexels.com/photos/18459210/pexels-photo-18459210.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Caretaker Service", "Dependable caretaker assistance for patients and elderly family members at home.", "https://images.pexels.com/photos/29372724/pexels-photo-29372724.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["24 Hour Patient Care", "Extended home care support for patients who require continuous assistance throughout the day and night.", "https://images.pexels.com/photos/29372727/pexels-photo-29372727.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Elderly Home Care", "Compassionate home assistance for elderly family members in a familiar and comfortable environment.", "https://images.pexels.com/photos/29372536/pexels-photo-29372536.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Recovery Care at Home", "Supportive care at home for patients during their recovery and return to everyday activities.", "https://images.pexels.com/photos/5875563/pexels-photo-5875563.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Male Patient Care", "Patient care assistance tailored to the daily needs and comfort of male patients at home.", "https://images.pexels.com/photos/8089105/pexels-photo-8089105.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Female Patient Care", "Respectful and supportive home care assistance designed around female patient needs.", "https://images.pexels.com/photos/8900026/pexels-photo-8900026.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["12 Hour Patient Care", "Flexible 12-hour home care support for patients requiring regular assistance and supervision.", "https://images.pexels.com/photos/7551686/pexels-photo-7551686.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Home Attendant Service", "Helpful home attendant support for patients and elderly persons with everyday care requirements.", "https://images.pexels.com/photos/8088595/pexels-photo-8088595.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Long Term Patient Care", "Consistent home care support for patients who need assistance over an extended period.", "https://images.pexels.com/photos/7551674/pexels-photo-7551674.jpeg?auto=compress&cs=tinysrgb&w=1600"]
+];
+
+/* Front/Home 20-service image carousel */
+const frontTrack = document.getElementById("frontTrack");
+const frontDots = document.getElementById("frontDots");
+const frontCurrent = document.getElementById("frontCurrent");
+const frontCarousel = document.getElementById("frontCarousel");
+let frontIndex = 0, frontTimer = null, frontStartX = 0, frontEndX = 0;
+
+services.forEach((s,i)=>{
+  const [name,desc,image] = s;
+  const slide = document.createElement("article");
+  slide.className = "front-slide";
+  slide.innerHTML = `
+    <img src="${image}" alt="${name}" loading="${i===0 ? "eager" : "lazy"}" referrerpolicy="no-referrer">
+    <div class="front-caption">
+      <span class="tag">AARAV HOME CARE</span>
+      <h3>${name}</h3>
+      <a class="front-wa" href="https://wa.me/918102109065?text=${encodeURIComponent("Hello Aarav Home Health Nursing & Care Service, I want to enquire about " + name + ".")}" target="_blank" rel="noopener">💬 WhatsApp Enquiry</a>
+    </div>`;
+  frontTrack.appendChild(slide);
+
+  const dot = document.createElement("button");
+  dot.className = "front-dot";
+  dot.type = "button";
+  dot.setAttribute("aria-label","Show service image " + (i+1));
+  dot.addEventListener("click",()=>{frontGo(i);frontRestart()});
+  frontDots.appendChild(dot);
+});
+const frontDotEls = [...frontDots.children];
+
+function frontGo(i){
+  frontIndex=(i+services.length)%services.length;
+  frontTrack.style.transform=`translateX(-${frontIndex*100}%)`;
+  frontCurrent.textContent=String(frontIndex+1).padStart(2,"0");
+  frontDotEls.forEach((d,n)=>d.classList.toggle("active",n===frontIndex));
+}
+function frontNext(){frontGo(frontIndex+1)}
+function frontPrev(){frontGo(frontIndex-1)}
+function frontStart(){frontStop();frontTimer=setInterval(frontNext,4000)}
+function frontStop(){if(frontTimer){clearInterval(frontTimer);frontTimer=null}}
+function frontRestart(){frontStart()}
+
+document.getElementById("frontNext").addEventListener("click",()=>{frontNext();frontRestart()});
+document.getElementById("frontPrev").addEventListener("click",()=>{frontPrev();frontRestart()});
+frontCarousel.addEventListener("mouseenter",frontStop);
+frontCarousel.addEventListener("mouseleave",frontStart);
+frontCarousel.addEventListener("touchstart",e=>{frontStartX=e.touches[0].clientX;frontEndX=frontStartX;frontStop()},{passive:true});
+frontCarousel.addEventListener("touchmove",e=>{frontEndX=e.touches[0].clientX},{passive:true});
+frontCarousel.addEventListener("touchend",()=>{
+  const d=frontEndX-frontStartX;
+  if(Math.abs(d)>50) d<0?frontNext():frontPrev();
+  frontStart();
+});
+
+
+const track = document.getElementById("serviceTrack");
+const dots = document.getElementById("dots");
+const current = document.getElementById("current");
+const carousel = document.getElementById("serviceCarousel");
+let index = 0, timer = null, startX = 0, endX = 0;
+
+services.forEach((s,i)=>{
+  const [name,desc,image] = s;
+  const slide = document.createElement("article");
+  slide.className = "slide";
+  slide.innerHTML = `
+    <div class="visual">
+      <img src="${image}" alt="${name}" loading="${i===0 ? "eager" : "lazy"}" referrerpolicy="no-referrer">
+      <div class="visual-title">${name}</div>
+      <div class="num">${String(i+1).padStart(2,"0")} / 20</div>
+    </div>
+    <div class="slide-content">
+      <div class="label">AARAV HOME CARE • ${String(i+1).padStart(2,"0")} / 20</div>
+      <h3>${name}</h3>
+      <p>${desc}</p>
+      <a class="wa" href="https://wa.me/918102109065?text=${encodeURIComponent("Hello Aarav Home Health Nursing & Care Service, I want to enquire about " + name + ".")}" target="_blank" rel="noopener">💬 WhatsApp Enquiry</a>
+    </div>`;
+  track.appendChild(slide);
+
+  const dot = document.createElement("button");
+  dot.className = "dot";
+  dot.type = "button";
+  dot.setAttribute("aria-label","Go to service " + (i+1));
+  dot.addEventListener("click",()=>{go(i);restart();});
+  dots.appendChild(dot);
+});
+
+const dotEls = [...dots.children];
+
+function go(i){
+  index=(i+services.length)%services.length;
+  track.style.transform=`translateX(-${index*100}%)`;
+  current.textContent=String(index+1).padStart(2,"0");
+  dotEls.forEach((d,n)=>d.classList.toggle("active",n===index));
+}
+function next(){go(index+1)}
+function prev(){go(index-1)}
+function start(){stop();timer=setInterval(next,4500)}
+function stop(){if(timer){clearInterval(timer);timer=null}}
+function restart(){start()}
+
+document.getElementById("nextBtn").addEventListener("click",()=>{next();restart()});
+document.getElementById("prevBtn").addEventListener("click",()=>{prev();restart()});
+carousel.addEventListener("mouseenter",stop);
+carousel.addEventListener("mouseleave",start);
+carousel.addEventListener("touchstart",e=>{startX=e.touches[0].clientX;endX=startX;stop()},{passive:true});
+carousel.addEventListener("touchmove",e=>{endX=e.touches[0].clientX},{passive:true});
+carousel.addEventListener("touchend",()=>{
+  const d=endX-startX;
+  if(Math.abs(d)>50) d<0?next():prev();
+  start();
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowRight"){next();restart()}
+  if(e.key==="ArrowLeft"){prev();restart()}
+});
+
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navLinks.classList.remove("open")));
+
+go(0);
+start();
+</script>
+
+</body>
+</html>
